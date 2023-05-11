@@ -1,16 +1,12 @@
-const data = null;
+const API_KEY = '121fe711';
 
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+// Get elements
+let findMovieButton = document.getElementById('find-movie-button');
+let movieTitle = document.getElementById('movie-title');
+let zipForm = document.getElementById('zip-form');
+let zipInput = document.getElementById('zip-input');
+let goButton = document.getElementById('go-button');
+let restaurantName = document.getElementById('restaurant-name');
+let movieHistoryList = document.getElementById('movie-history-list');
+let restaurantHistoryList = document.getElementById('restaurant-history-list');
 
-xhr.addEventListener('readystatechange', function () {
-	if (this.readyState === this.DONE) {
-		console.log(this.responseText);
-	}
-});
-
-xhr.open('GET', 'https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/NY/city/Bohemia/0');
-xhr.setRequestHeader('X-RapidAPI-Key', 'b587d99cd7msh69fb91f8d258ce9p119caejsn086be23ddd00');
-xhr.setRequestHeader('X-RapidAPI-Host', 'restaurants-near-me-usa.p.rapidapi.com');
-
-xhr.send(data);
