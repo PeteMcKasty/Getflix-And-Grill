@@ -58,7 +58,7 @@ async function getRandomMovie() {
 }
 
 // Get a random restaurant from the Restaurant near me API
-async function randomRestaurant(){
+async function getRandomRestaurant(){
   const url = 'https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/zipcode/90210/0';
   const options = {
 	method: 'GET',
