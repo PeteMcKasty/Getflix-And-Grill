@@ -82,3 +82,26 @@ async function randomRestaurant(){
 			return 'Error: Could not find restaurant.';
 		}
 }
+
+// Event listeners
+findMovieButton.addEventListener('click', async () => {
+	const movie = await getRandomMovie();
+	movieTitle.textContent = movie;
+	movieHistory.unshift(movie);
+	localStorage.setItem('movieHistory', JSON.stringify(movieHistory));
+	displayMovieHistory();
+});
+	
+zipForm.addEventListener('submit', async (event) => {
+	event.preventDefault();
+	const zipCode = zipInput.value.trim();
+	const restaurant = await getRandomRestaurant(zipCode);
+	restaurantName.textContent = restaurant;
+	restaurantHistory.unshift(restaurant);
+	localStorage.setItem('restaurantHistory', JSON.stringify(restaurantHistory));
+	displayRestaurantHistory();
+});
+	
+	// Display initial movie and restaurant history
+displayMovieHistory();
+displayRestaurantHistory();
