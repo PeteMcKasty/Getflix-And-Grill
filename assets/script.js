@@ -39,8 +39,9 @@ function displayRestaurantHistory() {
 }
 
 // Get a random movie from the OMDb API
+findMovieButton.addEventListener('click', getRandomMovie);
 async function getRandomMovie() {
-  const requestUrl = 'http://www.omdbapi.com/?apikey=${OMDb_API_KEY}&type=movie'
+  const requestUrl = 'http://www.omdbapi.com/?apikey=121fe711&type=movie'
 	try {
 		const response = await fetch(requestUrl);
 		const data = await response.json();
@@ -54,4 +55,30 @@ async function getRandomMovie() {
 	console.error(error);
 	return 'Error: Could not fetch movie.';
 	}
+}
+
+// Get a random restaurant from the Restaurant near me API
+async function randomRestaurant(){
+  const url = 'https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/zipcode/90210/0';
+  const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'b587d99cd7msh69fb91f8d258ce9p119caejsn086be23ddd00',
+		'X-RapidAPI-Host': 'restaurants-near-me-usa.p.rapidapi.com'
+	}
+};
+
+  try {
+	const response = await fetch(url, options);
+	const data = await response.json();
+	  if (data.Search && data.Search.length > 0) {
+		const meal = data.Search[Math.floor(Math.random() * data.Search.length)];
+			return meal.Restaurant;
+			} else {
+				throw new Error('Location Unknown.');
+			}
+		} catch (error) {
+			console.error(error);
+			return 'Error: Could not find restaurant.';
+		}
 }
