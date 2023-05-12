@@ -21,8 +21,7 @@ function displayMovieHistory() {
   movieHistoryList.innerHTML = '';
   for (let i = 0; i < movieHistory.length && i < 5; i++) {
     const li = document.createElement('li');
-    li.textContent = movieHistory[i];
-	
+    li.textContent = movieHistory[i];	
 	// Add li to movie history list
 	movieHistoryList.appendChild(li);
 	}
@@ -36,5 +35,23 @@ function displayRestaurantHistory() {
 	li.textContent = restaurantHistory[i];
 	// Add li to restaurant history list
 	restaurantHistoryList.appendChild(li);
+	}
+}
+
+// Get a random movie from the OMDb API
+async function getRandomMovie() {
+  const requestUrl = 'http://www.omdbapi.com/?apikey=${OMDb_API_KEY}&type=movie'
+	try {
+		const response = await fetch(requestUrl);
+		const data = await response.json();
+			if (data.Search && data.Search.length > 0) {
+			const movie = data.Search[Math.floor(Math.random() * data.Search.length)];
+			return movie.Title;
+			} else {
+				throw new Error('No movies found.');
+			}
+		} catch (error) {
+	console.error(error);
+	return 'Error: Could not fetch movie.';
 	}
 }
