@@ -39,7 +39,6 @@ function displayRestaurantHistory() {
 }
 
 // Get a random movie from the OMDb API
-findMovieButton.addEventListener('click', getRandomMovie);
 async function getRandomMovie() {
   const requestUrl = 'http://www.omdbapi.com/?apikey=121fe711&type=movie'
 	try {

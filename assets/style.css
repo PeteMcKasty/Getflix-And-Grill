@@ -1,0 +1,125 @@
+/* CSS code for Getflix and Grill website */
+
+/* Page layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    }
+    
+    header {
+    background-color: #ec1c23;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    }
+    
+    main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    }
+    
+    section {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #ec1c23;
+    border-radius: 10px;
+    width: 300px;
+    }
+    
+    section h2 {
+    font-size: 20px;
+    }
+    
+    aside {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #ec1c23;
+    border-radius: 10px;
+    width: 250px;
+    }
+    
+    aside h2 {
+    font-size: 20px;
+    }
+    
+    ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+    
+    li {
+    margin-bottom: 10px;
+    }
+    
+    /* Movie Selector */
+    #find-movie-button {
+    background-color: #ec1c23;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    }
+    
+    #movie-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    }
+    
+    /* Food Selector */
+    #zip-form {
+    display: flex;
+    align-items: center;
+    }
+    
+    label {
+    margin-right: 10px;
+    }
+    
+    #zip-input {
+    padding: 5px;
+    border: 2px solid #ec1c23;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 100px;
+    }
+    
+    #go-button {
+    background-color: #ec1c23;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    
+    #restaurant-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    }
+    
+    /* History sidebar */
+    section, aside {
+    position: relative;
+    }
+    
+    
+    #restaurant-history h2 {
+    background-color: #ec1c23;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    
+    }
