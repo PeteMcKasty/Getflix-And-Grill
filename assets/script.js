@@ -58,8 +58,8 @@ console.log(getRandomMovie)
 
 // Get a random restaurant from the Restaurant near me API
 async function getRandomRestaurant(){
-  const url = 'https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/zipcode/${zipInpiut}/1';
-  const options = {
+  const url = `https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/zipcode/${zipInput.value}/1`;
+	const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': 'b587d99cd7msh69fb91f8d258ce9p119caejsn086be23ddd00',
