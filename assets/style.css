@@ -2,126 +2,242 @@
 
 /* Page layout */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     margin: 0;
     padding: 0;
-    }
-    
-    header {
-    background-color: #ec1c23;
+    background-color: rgba(0, 0, 0, 1.9); /* Semi-transparent black background */
+    background-image: url("https://images.unsplash.com/photo-1543536448-d209d2d13a1c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    /* Set the text color to white */
+    text-transform: uppercase;
+}
+
+header {
+    background-color: #E50914;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px;
-    }
-    
-    main {
+
+}
+
+h1 {
+    font-size: 40px;
+    letter-spacing: 8px;
+    /* Increase letter spacing for more spacing */
+    text-transform: uppercase;
+    /* Transform text to uppercase */
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+h2 {
+    letter-spacing: 3px;
+    background-color: #E50914;
+    width: auto;
+
+}
+
+#food-section,
+#movie-history,
+#movie-section,
+#restaurant-history {
+    margin: 40px auto;
+    /* Increase the margin as needed */
+    padding: 20px;
+    border: 2.7px solid #E50914;
+    border-radius: 10px;
+    width: 600px;
+    text-align: center;
+    font-size: 20px;
+    /* Increase the font size as needed */
+    line-height: 1.5;
+    /* Adjust the line height for spacing */
+}
+
+main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    }
-    
-    section {
+}
+
+section {
     margin: 20px;
     padding: 20px;
-    border: 2px solid #ec1c23;
+    border: 2px solid #E50914;
     border-radius: 10px;
     width: 300px;
-    }
-    
-    section h2 {
+}
+
+section h2 {
     font-size: 20px;
-    }
-    
-    aside {
+}
+
+aside {
     margin: 20px;
     padding: 20px;
-    border: 2px solid #ec1c23;
+    border: 2px solid #E50914;
     border-radius: 10px;
     width: 250px;
-    }
-    
-    aside h2 {
+}
+
+aside h2 {
     font-size: 20px;
-    }
-    
-    ul {
+    align-items: center;
+}
+
+ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    }
-    
-    li {
+}
+
+li {
     margin-bottom: 10px;
-    }
-    
-    /* Movie Selector */
-    #find-movie-button {
-    background-color: #ec1c23;
+}
+
+/* Movie Selector */
+#find-movie-button {
+    background-color: #E50914;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 30px;
     border: none;
     border-radius: 5px;
     margin-bottom: 20px;
     cursor: pointer;
-    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-    }
-    
-    #movie-title {
-    font-size: 16px;
     font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 2px;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}
+
+#movie-title {
+    font-size: 22px;
     margin-top: 20px;
-    }
-    
-    /* Food Selector */
-    #zip-form {
+}
+
+/* Food Selector */
+#zip-form {
     display: flex;
     align-items: center;
-    }
-    
-    label {
+}
+
+/* Food Selector */
+#zip-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+label {
     margin-right: 10px;
-    }
-    
-    #zip-input {
+    text-align: center;
+    /* Center the text within the label */
+}
+
+#zip-input {
     padding: 5px;
-    border: 2px solid #ec1c23;
+    border: 2px solid #E50914;
     border-radius: 5px;
     margin-right: 10px;
     width: 100px;
-    }
-    
-    #go-button {
-    background-color: #ec1c23;
+    text-align: center;
+    /* Center the text within the input field */
+}
+
+#go-button {
+    background-color: #E50914;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    /* Center the text within the button */
+}
+
+label {
+    margin-right: 10px;
+}
+
+#zip-input {
+    padding: 5px;
+    border: 2px solid #E50914;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 100px;
+}
+
+#go-button {
+    background-color: #E50914;
     color: white;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
-    }
-    
-    #restaurant-name {
-    font-size: 16px;
-    font-weight: bold;
+}
+
+#restaurant-name {
+    font-size: 22px;
     margin-top: 20px;
-    }
-    
-    /* History sidebar */
-    section, aside {
+}
+
+/* History sidebar */
+aside,
+section {
     position: relative;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #food-section,
+    #movie-history,
+    #movie-section,
+    #restaurant-history {
+        width: 100%;
     }
-    
-    
-    #restaurant-history h2 {
-    background-color: #ec1c23;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    
+}
+
+@media (max-width: 480px) {
+    aside,
+    section {
+        margin: 10px;
+        padding: 10px;
+        width: 100%;
     }
+
+    h1 {
+        font-size: 30px;
+        letter-spacing: 3px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    #zip-form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    #zip-input {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
