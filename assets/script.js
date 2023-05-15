@@ -1,4 +1,3 @@
-const OMDb_API_KEY = '121fe711';
 
 // Get elements
 let findMovieButton = document.getElementById('find-movie-button');
@@ -38,15 +37,15 @@ function displayRestaurantHistory() {
 	}
 }
 
-// Get a random movie from the OMDb API
+// Get a random movie from the Movie Db API
 async function getRandomMovie() {
-  const requestUrl = 'http://www.omdbapi.com/?apikey=121fe711&type=movie'
+  const requestUrl = 'https://api.themoviedb.org/3/movie/top_rated?api_key=594d9c3c5699caf2a193df2d2d298d75&language=en-US&page=1'
 	try {
 		const response = await fetch(requestUrl);
 		const data = await response.json();
-			if (data.Search && data.Search.length > 0) {
-			const movie = data.Search[Math.floor(Math.random() * data.Search.length)];
-			return movie.Title;
+			if (data.results && data.results.length > 0) {
+			const movie = data.results[Math.floor(Math.random() * data.results.length)];
+			return movie.title;
 			} else {
 				throw new Error('No movies found.');
 			}
@@ -55,10 +54,11 @@ async function getRandomMovie() {
 	return 'Error: Could not fetch movie.';
 	}
 }
+console.log(getRandomMovie)
 
 // Get a random restaurant from the Restaurant near me API
 async function getRandomRestaurant(){
-  const url = 'https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/zipcode/90210/0';
+  const url = 'https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/zipcode/${zipInpiut}/1';
   const options = {
 	method: 'GET',
 	headers: {
@@ -81,6 +81,7 @@ async function getRandomRestaurant(){
 			return 'Error: Could not find restaurant.';
 		}
 }
+console.log(getRandomRestaurant)
 
 // Event listeners
 findMovieButton.addEventListener('click', async () => {
