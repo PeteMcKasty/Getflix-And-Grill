@@ -58,7 +58,7 @@ console.log(getRandomMovie)
 
 // Get a random restaurant from the Restaurant near me API
 async function getRandomRestaurant(){
-  const url = 'https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/zipcode/${zipInpiut}/1';
+  const url = `https://example-api.com/restaurants?zipcode=${zipInput}`;
   const options = {
 	method: 'GET',
 	headers: {
@@ -67,19 +67,19 @@ async function getRandomRestaurant(){
 	}
 };
 
-  try {
-	const response = await fetch(url, options);
-	const data = await response.json();
-	  if (data.Search && data.Search.length > 0) {
-		const meal = data.Search[Math.floor(Math.random() * data.Search.length)];
-			return meal.Restaurant;
-			} else {
-				throw new Error('Location Unknown.');
-			}
-		} catch (error) {
-			console.error(error);
-			return 'Error: Could not find restaurant.';
-		}
+try {
+    const response = await fetch(url, options);
+    const data = await response.json();
+    if (data.length > 0) {
+      const randomRestaurant = Math.floor(Math.random() * data.length);
+      return data[randomRestaurant];
+    } else {
+      throw new Error('No restaurants found for the given zip code.');
+    }
+  } catch (error) {
+    console.error(error);
+    return 'Error: Could not find restaurant.';
+  }
 }
 console.log(getRandomRestaurant)
 
