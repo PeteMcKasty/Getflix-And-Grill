@@ -10,14 +10,15 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: white;
+    color: black;
     /* Set the text color to white */
     text-transform: uppercase;
+
 }
 
 header {
     background-color: #E50914;
-    color: white;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,6 +59,7 @@ h2 {
     /* Increase the font size as needed */
     line-height: 1.5;
     /* Adjust the line height for spacing */
+
 }
 
 main {
@@ -225,6 +227,7 @@ section {
 
     h2 {
         font-size: 18px;
+    
     }
 
     #zip-form {
