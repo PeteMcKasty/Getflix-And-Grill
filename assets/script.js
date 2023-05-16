@@ -54,15 +54,14 @@ async function getRandomMovie() {
 	return 'Error: Could not fetch movie.';
 	}
 }
-console.log(getRandomMovie)
 
 // Get a random restaurant from the Restaurant near me API
 async function getRandomRestaurant(){
-  const url = `https://example-api.com/restaurants?zipcode=${zipInput}`;
+  const url = `https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/zipcode/${zipInput.value.trim()}/1`;
   const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'b587d99cd7msh69fb91f8d258ce9p119caejsn086be23ddd00',
+		'X-RapidAPI-Key': '9e777fbf23mshd5cb66fcb4717b9p170902jsn9434439eb519',
 		'X-RapidAPI-Host': 'restaurants-near-me-usa.p.rapidapi.com'
 	}
 };
@@ -70,9 +69,10 @@ async function getRandomRestaurant(){
 try {
     const response = await fetch(url, options);
     const data = await response.json();
-    if (data.length > 0) {
-      const randomRestaurant = Math.floor(Math.random() * data.length);
-      return data[randomRestaurant];
+    if (data.restaurants.length > 0) {
+      const randomRestaurant = Math.floor(Math.random() * data.restaurants.length);
+	  console.log(data.restaurants[randomRestaurant])
+      return data.restaurants[randomRestaurant];
     } else {
       throw new Error('No restaurants found for the given zip code.');
     }
@@ -81,7 +81,7 @@ try {
     return 'Error: Could not find restaurant.';
   }
 }
-console.log(getRandomRestaurant)
+
 
 // Event listeners
 findMovieButton.addEventListener('click', async () => {
@@ -96,8 +96,8 @@ zipForm.addEventListener('submit', async (event) => {
 	event.preventDefault();
 	const zipCode = zipInput.value.trim();
 	const restaurant = await getRandomRestaurant(zipCode);
-	restaurantName.textContent = restaurant;
-	restaurantHistory.unshift(restaurant);
+	restaurantName.textContent = restaurant.restaurantName;
+	restaurantHistory.unshift(restaurant.restaurantName);
 	localStorage.setItem('restaurantHistory', JSON.stringify(restaurantHistory));
 	displayRestaurantHistory();
 });
