@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Getflix and Grill</title>
-  <link rel="stylesheet" href="./assets/style.css">
-</head>
-<body>
-  <header>
-    <h1>Getflix and Grill</h1>
-  </header>
+    <head>
+        <title>Getflix and Grill</title>
+        <link rel="stylesheet" href="./assets/style.css">
+        <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AGVlVhYLCw78ent9tpyciyr///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wCAgH+wqaRw+dmeQPpvaFtjMU4xEaGhcQoAAAAJAAAAHRUTEiYAAAAOl5eXAP///wD///8A////AP///wD///8A////AHBwcPGejIP1QGRr9JF7af9YRTf/4MzK/+jV0//u29v/8uDg//Ph4v8AAABgAAAAC////wD///8A////AP///wDBvqzOu6aH/k5OTv93al//ybSu/9zRzv/eysf/5tPS/7Wqnf8aGBWK9OLj/wAAAEkAAAAg////AP///wD///8A4dvWAxNPVP53SQv/nJGM/wcGBv92Z1X/empX/93Jxv+7saT/mot4//Pj4//r3Nv9AAAAIwAAAAX///8A////AK+YjP8lFAP9AAAA/76qov9WSz3/TkM3/4l3Yv/Uwr3/saWX/4V0Xv/z5+f/+PDw/wAAABQBAQEA////AP///wCvmIz/h1UO/4hUCv/ArqX/wrCo/2RXR/9KQDX/2cvG/+bb2P/x6un/+PTz//z5+f/d0s5/////AP///wD///8Ar5iM/z4XE/8AAAD/z8G6/9PGwP/Zzsn/49vX/8jAvf/19PP/+/n5/1hNP/9SRzv//v7+/////wD///8A////ALKckf+edEP/l3JO/+ji3v/t6OX/a11M/9nU0v+Bd3L/joN+//7+/v9gVUX/aFtL//38/P////8A////AP///wDHt6//xsbG/+bVvv/7+/r/emxZ/45+aP9pW0v//v7+//7+/v/8/Pz/gXBc/5aHdP/y7ev/////AP///wD///8A4trW/4SEgP/w5Nb/jYJ+/6moo/9gVEX/aFtL//z7+v+NfWj/dmdV/+fg3f/e1M//18nE/////wD///8A////APv7+gCsop3PyJ1s/7GPZP/+/v7/bmBP/oR0X//r5uP/mYp3/2tdTf+6sa3/w7Kp//bz8gv///8A////AP///wD///8A9fPy/s3JvP+bemP/q5qK/+rk4f/az8r/zr+4/5iIdf93aFX/raOe/7eimf////8A////AP///wD///8A////AP///wD6+fj/7+vo/xEREP+mnpr/wK2l/7ikmv+8qJ7+5uTiAbSek/////8A////AP///wD///8A////AP///wD///8A////AL2uo3LWzMX/nId4/2xWRf7Rxb/6sZqP/7WfleD///8A////AP///wD///8A//8AAM//AACP/wAAwA8AAMAHAADgAwAAwAMAAMADAADAAQAAwAEAAMABAADAAQAA4AMAAOADAADwFwAA/A8AAA==" rel="icon" type="image/x-icon" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin="crossorigin">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@200;500&display=swap"
+            rel="stylesheet">
 
-  <section id="movie-section">
-    <h2>Movie Selector</h2>
-    <button id="find-movie-button">Find Your Movie!</button>
-    <p id="movie-title"></p>
-  </section>
+    </head>
+    <body>
+        <header>
+            <div class="circular-text"></div>
+            <h1>Getflix and Grill</h1>
 
-  <section id="food-section">
-    <h2>Food Selector</h2>
-    <form id="zip-form">
-      <label for="zip-input">Enter your ZIP code:</label>
-      <input type="text" id="zip-input" name="zip" required>
-      <button type="submit" id="go-button">GO</button>
-    </form>
-    <p id="restaurant-name"></p>
-  </section>
+        </header>
 
-  <aside id="movie-history">
-    <h2>Movie History</h2>
-    <ul id="movie-history-list"></ul>
-  </aside>
+        <section id="movie-section">
+            <h2>Movie Selector</h2>
+            <button id="find-movie-button">GETFLIX!</button>
+            <p id="movie-title"></p>
+        </section>
 
-  <aside id="restaurant-history">
-    <h2>Restaurant History</h2>
-    <ul id="restaurant-history-list"></ul>
-  </aside>
+        <aside id="movie-history">
+            <h2>Movie History</h2>
+            <ul id="movie-history-list"></ul>
+        </aside>
 
-  <script src="./assets/script.js"></script>
-</body>
+        <section id="food-section">
+            <h2>Food Selector</h2>
+            <form id="zip-form">
+                <label for="zip-input">Enter your ZIP code:</label>
+                <input type="text" id="zip-input" name="zip" required="required">
+                <button type="submit" id="go-button">GO</button>
+            </form>
+            <p id="restaurant-name"></p>
+        </section>
+
+        <aside id="restaurant-history">
+            <h2>Restaurant History</h2>
+            <ul id="restaurant-history-list"></ul>
+        </aside>
+
+        <script src="./assets/script.js"></script>
+    </body>
 </html>
