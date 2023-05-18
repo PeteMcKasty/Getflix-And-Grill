@@ -61,7 +61,7 @@ async function getRandomRestaurant(){
   const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '9e777fbf23mshd5cb66fcb4717b9p170902jsn9434439eb519',
+		'X-RapidAPI-Key': '1205d2d336mshd776cc63c44a909p1b6ed2jsne3048ff6c3ea',
 		'X-RapidAPI-Host': 'restaurants-near-me-usa.p.rapidapi.com'
 	}
 };
